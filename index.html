@@ -1,0 +1,133 @@
+<!doctype html>
+<html class="no-js" lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="css/foundation.min.css" rel="stylesheet" />
+    <link href="css/nv.d3.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <div class="row">
+      <div class="small-12 columns">
+
+        <!-- Title -->
+        <div class="row">
+          <div class="small-12 columns">
+            <h1>Neural Network for Regression</h1>
+            <h4 class="subheader">Two-Layer Perceptron</h4>
+          </div>
+        </div>
+
+        <hr />
+
+        <!-- Content -->
+        <div class="row">
+
+          <!-- Left column (results) -->
+          <div class="small-12 medium-6 columns">
+
+            <!-- NN output & Training data results -->
+            <div class="row">
+              <div class="small-12 columns">
+                <svg id="input-output" style="height:300px"/>
+              </div>
+            </div>
+
+            <!-- Error function -->
+            <div class="row">
+              <div class="small-12 columns">
+                <svg id="error" style="height:300px"/>
+              </div>
+            </div>
+          </div>
+          <!-- End of left column (results) -->
+
+
+          <!-- Right column (conditions) -->
+          <div class="small-12 medium-6 columns">
+            <div class="row">
+              <div class="small-12 columns">
+
+                <fieldset>
+                  <legend>Learning Conditions</legend>
+
+                  <label>Training data generating function</label>
+                  <input type="radio" class="target-radio" name="target" id="target-sin" checked="checked"><label for="target-sin">sin(&pi;x)</label>
+                  <input type="radio" class="target-radio" name="target" id="target-x2"><label for="target-x2">x<sup>2</sup></label>
+                  <input type="radio" class="target-radio" name="target" id="target-abs"><label for="target-abs">|x|</label>
+                  <input type="radio" class="target-radio" name="target" id="target-heaviside"><label for="target-heaviside">step</label>
+
+                  <label>Generating function in JavaScript form</label>
+                  <input type="text" id="target-function" placeholder="Target function in JavaScript form">
+
+                  <div class="row">
+                    <div class="large-6 columns">
+                      <label>Learning coefficient &eta;</label>
+                      <input type="text" id="eta" placeholder="Leaning coefficients">
+                    </div>
+
+                    <div class="large-6 columns">
+                      <label>Number of hidden units</label>
+                      <input type="text" id="M" placeholder="Number of hidden units">
+                    </div>
+                  </div>
+
+                  <label for="show-hidden-output">
+                    <input type="checkbox" id="show-hidden-output" value="check"> Display hidden units' output
+                  </label>
+
+                  <hr/>
+
+                  <dl class="sub-nav">
+                    <dt>Sampling:</dt>
+                    <dd id="is-seq-sampling" class="active"><a href="#">Sequential</a></dd>
+                    <dd id="is-random-sampling"><a href="#">Random Sampling</a></dd>
+                  </dl>
+
+                  <div class="row" id="seq-param">
+                    <div class="large-6 columns">
+                      <label>Number of dataset</label>
+                      <input type="text" id="seq-number-data" placeholder="Number of iterations">
+                    </div>
+
+                    <div class="large-6 columns">
+                      <label>Iterations for each dataset</label>
+                      <input type="text" id="seq-iteration" placeholder="Number of iterations">
+                    </div>
+                  </div>
+
+                  <div class="row" id="random-param" style="display:none;">
+                    <div class="large-12 columns">
+                      <label>Number of random sampling dataset</label>
+                      <input type="text" id="random-number-sampling" placeholder="Number of iterations">
+                    </div>
+                  </div>
+
+
+                  <br/>
+                  <a href="#" class="button expand" id="calculate-button">Calculate</a>
+                </fieldset>
+              </div>
+            </div>
+          </div>
+          <!-- End of right column (conditions) -->
+
+        </div>
+        <!-- End of Content -->
+
+
+		<footer>
+			<p class="text-right">&copy; 2014 Takuya Asano</p>
+		</footer>
+
+      </div>
+    </div>
+
+    <script src="./js/vendor/d3.v3.js" type="text/javascript"></script>
+    <script src="./js/vendor/nv.d3.min.js" type="text/javascript"></script>
+    <script src="./js/vendor/jquery-2.1.0.min.js" type="text/javascript"></script>
+    <script src="./js/tlp.js" type="text/javascript"></script>
+    <script src="./js/tlp-demo.js" type="text/javascript"></script>
+  </body>
+</html>

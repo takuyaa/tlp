@@ -338,6 +338,12 @@ var calculate = function() {
     var set = $('#seq-number-data').val();
     var iteration = ($('#seq-iteration').val());
 
+    if ($('#show-hidden-output').prop('checked')) {
+        showHiddenOutput = true;
+    } else {
+        showHiddenOutput = false;
+    }
+
     init();
 
     var target;

@@ -4,6 +4,14 @@ Two-Layer Perceptron
 Two-Layer Perceptron for regression.
 
 
+
+Demo
+----
+
+[TLP for Regression Demo](http://takuyaa.github.io/tlp/)
+
+
+
 Copyright and license
 ---------------------
 

@@ -1,0 +1,13 @@
+Two-Layer Perceptron
+====================
+
+Two-Layer Perceptron for regression.
+
+
+Copyright and license
+---------------------
+
+Copyright (c) 2014 Takuya Asano All Rights Reserved.
+
+This software is released under the MIT License.
+See LICENSE.txt and NOTICE.md.
